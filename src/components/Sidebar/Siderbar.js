@@ -14,6 +14,19 @@ import Badge from "@mui/material/Badge";
 import SourceIcon from "@mui/icons-material/Source";
 import CorporateFareIcon from "@mui/icons-material/CorporateFare";
 import SettingsIcon from "@mui/icons-material/Settings";
+import LogoutIcon from "@mui/icons-material/Logout";
+
+const Item = ({ title, icon, badge }) => {
+  return (
+    <MenuItem sx={{ mt: 0.8 }}>
+      <ListItemIcon style={{ color: "#9e9e9e" }}>{icon}</ListItemIcon>
+      <Typography variant="body2" color="#9e9e9e">
+        {title}
+      </Typography>
+      {badge && badge}
+    </MenuItem>
+  );
+};
 
 const Siderbar = () => {
   return (
@@ -34,66 +47,29 @@ const Siderbar = () => {
           <MenuOutlinedIcon />
         </IconButton>
       </Box>
-      <Box>
+      <Box mt="35px">
         <MenuList>
-          <MenuItem>
-            <ListItemIcon>
-              <HomeIcon />
-            </ListItemIcon>
-            <Typography variant="body2" color="text.secondary">
-              Home
-            </Typography>
-          </MenuItem>
-          <MenuItem>
-            <ListItemIcon>
-              <ArticleIcon></ArticleIcon>
-            </ListItemIcon>
-            <Typography variant="body2" color="text.secondary">
-              Projects
-            </Typography>
-          </MenuItem>
-          <MenuItem>
-            <ListItemIcon>
-              <WindowIcon></WindowIcon>
-            </ListItemIcon>
-            <Typography variant="body2" color="text.secondary">
-              Dashboard
-            </Typography>
-          </MenuItem>
-          <MenuItem>
-            <ListItemIcon>
-              <ForumIcon></ForumIcon>
-            </ListItemIcon>
-            <Typography variant="body2" color="text.secondary">
-              Messages
-            </Typography>
-            <Badge badgeContent="06" sx={{ pl: 5 }} color="error"></Badge>
-          </MenuItem>
-          <MenuItem>
-            <ListItemIcon>
-              <SourceIcon></SourceIcon>
-            </ListItemIcon>
-            <Typography variant="body2" color="text.secondary">
-              Documents
-            </Typography>
-          </MenuItem>
-          <MenuItem>
-            <ListItemIcon>
-              <CorporateFareIcon></CorporateFareIcon>
-            </ListItemIcon>
-            <Typography variant="body2" color="text.secondary">
-              Organizations
-            </Typography>
-          </MenuItem>
-          <MenuItem>
-            <ListItemIcon>
-              <SettingsIcon></SettingsIcon>
-            </ListItemIcon>
-            <Typography variant="body2" color="text.secondary">
-              Settings
-            </Typography>
-          </MenuItem>
+          <Item title="Home" icon={<HomeIcon />} />
+          <Item title="Projects" icon={<ArticleIcon />} />
+          <Item title="Dashboard" icon={<WindowIcon />} />
+          <Item
+            title="Messages"
+            icon={<ForumIcon />}
+            badge={
+              <Badge badgeContent="06" sx={{ pl: 5 }} color="error"></Badge>
+            }
+          />
+          <Item title="Documents" icon={<SourceIcon />} />
+          <Item title="Organizations" icon={<CorporateFareIcon />} />
+          <Item title="Settings" icon={<SettingsIcon />} />
         </MenuList>
+      </Box>
+      <Box position="absolute" bottom="100px">
+        <Item
+          title="Logout"
+          icon={<LogoutIcon />}
+          sx={{ position: "absolute", bottom: "10px" }}
+        />
       </Box>
     </div>
   );
