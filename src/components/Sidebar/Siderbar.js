@@ -41,9 +41,13 @@ const Siderbar = () => {
           alt="kyro-logo"
           width="100px"
           src={kyroLogo}
-          style={{ cursor: "pointer" }}
+          style={{
+            cursor: "pointer",
+            display: "flex",
+            marginTop: "7px",
+          }}
         />
-        <IconButton>
+        <IconButton style={{ transform: "scale(1.2)" }}>
           <MenuOutlinedIcon />
         </IconButton>
       </Box>

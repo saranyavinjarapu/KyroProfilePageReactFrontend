@@ -1,11 +1,12 @@
 import "./App.css";
+import ProfileMain from "./Profile/ProfileMain";
 import Siderbar from "./Sidebar/Siderbar";
 
 function App() {
   return (
     <div className="App">
       <Siderbar></Siderbar>
-      <h2>hey</h2>
+      <ProfileMain></ProfileMain>
     </div>
   );
 }
