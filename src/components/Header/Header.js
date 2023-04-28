@@ -23,7 +23,7 @@ const Header = () => {
         >
           ADD PROJECT
         </Button>
-        <img alt="user-picture-icon" src={UserIcon} />
+        <img alt="user-icon" src={UserIcon} />
         <div className={styles.AccountInfo}>
           <p className={styles.AccountName}>Adam</p>
           <p className={styles.AccountRole}>Project Manager</p>

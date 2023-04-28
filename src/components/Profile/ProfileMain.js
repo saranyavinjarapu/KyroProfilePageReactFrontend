@@ -1,12 +1,16 @@
 import React from "react";
 import styles from "./ProfileMain.module.css";
 import Header from "../Header/Header";
+import ProfileUpdate from "../ProfileUpdate/ProfileUpdate";
 
 const ProfileMain = () => {
   return (
     <div className={styles.Main}>
       <Header></Header>
-      <h1>ProfileMain</h1>
+      <div className={styles.UserProfile}>
+        <ProfileUpdate></ProfileUpdate>
+        <div>Profile Display</div>
+      </div>
     </div>
   );
 };

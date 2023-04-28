@@ -5,3 +5,7 @@
   background-color: rgb(249, 245, 245, 0.5);
   padding-left: 30px;
 }
+
+.UserProfile {
+  display: flex;
+}
