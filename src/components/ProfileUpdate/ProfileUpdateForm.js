@@ -1,30 +1,12 @@
 import React from "react";
 import styles from "./ProfileUpdate.module.css";
-import TextField from "@mui/material/TextField";
-import InputAdornment from "@mui/material/InputAdornment";
+import FormItem from "./helpers";
 import PersonIcon from "@mui/icons-material/Person";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Button from "@mui/material/Button";
-
-const FormItem = ({ label, icon }) => {
-  return (
-    <TextField
-      label={label}
-      size="small"
-      InputLabelProps={{
-        shrink: true,
-      }}
-      InputProps={{
-        startAdornment: (
-          <InputAdornment position="start">{icon}</InputAdornment>
-        ),
-      }}
-    />
-  );
-};
 
 const ProfileUpdateForm = () => {
   return (
