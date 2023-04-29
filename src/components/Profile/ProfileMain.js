@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./ProfileMain.module.css";
 import Header from "../Header/Header";
 import ProfileUpdate from "../ProfileUpdate/ProfileUpdate";
+import ProfileDisplay from "../ProfileDisplay/ProfileDisplay";
 
 const ProfileMain = () => {
   return (
@@ -9,7 +10,7 @@ const ProfileMain = () => {
       <Header></Header>
       <div className={styles.UserProfile}>
         <ProfileUpdate></ProfileUpdate>
-        <div>Profile Display</div>
+        <ProfileDisplay></ProfileDisplay>
       </div>
     </div>
   );

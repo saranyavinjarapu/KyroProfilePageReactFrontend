@@ -1,0 +1,33 @@
+.ProfileDisplay {
+  display: flex;
+  justify-content: center;
+  background-color: lightgray;
+  width: 370px;
+  height: 100%;
+  opacity: 0.2;
+}
+
+.ProfileDisplayContainer {
+  margin-top: 70px;
+  width: 150px;
+  height: 170px;
+  position: relative;
+  text-align: center;
+}
+
+.ProfileDisplay img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.CameraIcon {
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  bottom: 13px;
+  right: -25px;
+  border-radius: 15%;
+  padding: 10px;
+}
