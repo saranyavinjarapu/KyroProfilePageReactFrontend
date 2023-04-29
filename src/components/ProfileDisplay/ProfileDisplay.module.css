@@ -1,18 +1,23 @@
 .ProfileDisplay {
   display: flex;
   justify-content: center;
-  background-color: lightgray;
+  background-color: rgb(211, 211, 211, 0.2);
   width: 370px;
   height: 100%;
-  opacity: 0.2;
 }
 
 .ProfileDisplayContainer {
   margin-top: 70px;
-  width: 150px;
+  width: 160px;
   height: 170px;
   position: relative;
   text-align: center;
+}
+
+.ProfileDisplayContainer p {
+  margin-top: -7px;
+  color: gray;
+  font-size: 18px;
 }
 
 .ProfileDisplay img {

@@ -11,7 +11,7 @@ const ProfileDisplay = () => {
         <div className={styles.CameraIcon}>
           <CameraAltIcon></CameraAltIcon>
         </div>
-        <p>Adam Levine</p>
+        <h3>Adam Levine</h3>
         <p>adamlevine@kyro.us</p>
       </div>
     </div>
