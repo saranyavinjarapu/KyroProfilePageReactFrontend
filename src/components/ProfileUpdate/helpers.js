@@ -1,11 +1,13 @@
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
-const FormItem = ({ label, icon, name, register }) => {
+import { createContext } from "react";
+export const FormItem = ({ label, icon, register, changeHandler }) => {
   return (
     <TextField
       label={label}
       size="small"
       {...register}
+      onChange={changeHandler}
       InputLabelProps={{
         shrink: true,
       }}
@@ -18,4 +20,4 @@ const FormItem = ({ label, icon, name, register }) => {
   );
 };
 
-export default FormItem;
+export const ProfileContext = createContext(null);

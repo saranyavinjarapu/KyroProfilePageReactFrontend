@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./ProfileDisplay.module.css";
 import ProfilePicture from "../../assets/user_icon.png";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import { ProfileContext } from "../ProfileUpdate/helpers";
 
 const ProfileDisplay = () => {
+  const { userData } = useContext(ProfileContext);
+  const { firstName, lastName, email } = userData;
   return (
     <div className={styles.ProfileDisplay}>
       <div className={styles.ProfileDisplayContainer}>
@@ -11,8 +14,10 @@ const ProfileDisplay = () => {
         <div className={styles.CameraIcon}>
           <CameraAltIcon></CameraAltIcon>
         </div>
-        <h3>Adam Levine</h3>
-        <p>adamlevine@kyro.us</p>
+        <h3>
+          {firstName ? firstName : "First"} {lastName ? lastName : "Last Name"}
+        </h3>
+        <p>{email ? email : "User Email"}</p>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./ProfileUpdate.module.css";
-import FormItem from "./helpers";
+import { FormItem, ProfileContext } from "./helpers";
 import PersonIcon from "@mui/icons-material/Person";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
@@ -11,8 +11,12 @@ import { useForm } from "react-hook-form";
 
 const ProfileUpdateForm = () => {
   const { register, handleSubmit } = useForm();
+  const { userData, setUserData } = useContext(ProfileContext);
   const handleSaveUserProfile = (formValues) => {
     console.log("formValues", formValues);
+  };
+  const onFormInputChange = (event) => {
+    setUserData({ ...userData, [event.target.name]: event.target.value });
   };
   return (
     <form
@@ -22,13 +26,16 @@ const ProfileUpdateForm = () => {
       <div className={styles.ProfileUpdateFormBody}>
         <FormItem
           label="First Name"
+          name="firstName"
           register={register("firstName")}
           icon={<PersonIcon />}
+          changeHandler={onFormInputChange}
         />
         <FormItem
           label="Last Name"
           register={register("lastName")}
           icon={<PersonIcon />}
+          changeHandler={onFormInputChange}
         />
         <FormItem
           label="Display Name"
@@ -39,6 +46,7 @@ const ProfileUpdateForm = () => {
           label="Email"
           register={register("email")}
           icon={<MailOutlineIcon />}
+          changeHandler={onFormInputChange}
         />
         <FormItem
           label="Phone No(Work)"
