@@ -1,10 +1,11 @@
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
-const FormItem = ({ label, icon }) => {
+const FormItem = ({ label, icon, name, register }) => {
   return (
     <TextField
       label={label}
       size="small"
+      {...register}
       InputLabelProps={{
         shrink: true,
       }}

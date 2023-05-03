@@ -7,7 +7,7 @@ const ProfileDisplay = () => {
   return (
     <div className={styles.ProfileDisplay}>
       <div className={styles.ProfileDisplayContainer}>
-        <img alt="user-profile-picture" src={ProfilePicture} />
+        <img alt="user" src={ProfilePicture} />
         <div className={styles.CameraIcon}>
           <CameraAltIcon></CameraAltIcon>
         </div>
