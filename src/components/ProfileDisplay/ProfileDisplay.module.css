@@ -16,12 +16,16 @@
 
 .ProfileDisplayContainer h3 {
   text-transform: capitalize;
+  max-width: 200px;
+  overflow: auto;
 }
 
 .ProfileDisplayContainer p {
   margin-top: -7px;
   color: gray;
   font-size: 18px;
+  max-width: 200px;
+  overflow: auto;
 }
 
 .ProfileDisplay img {

@@ -1,12 +1,14 @@
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import { createContext } from "react";
-export const FormItem = ({ label, icon, register, changeHandler }) => {
+import { useFormContext } from "react-hook-form";
+export const FormItem = ({ label, name, icon, changeHandler }) => {
+  const { register } = useFormContext();
   return (
     <TextField
       label={label}
       size="small"
-      {...register}
+      {...register(name)}
       onChange={changeHandler}
       InputLabelProps={{
         shrink: true,
