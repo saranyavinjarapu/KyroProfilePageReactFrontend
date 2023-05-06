@@ -14,7 +14,10 @@ const Header = () => {
   return (
     <div className={styles.Header}>
       <div>
-        <p className={styles.GreetingHeadline}>Good Morning, {userFirstName}</p>
+        <p className={styles.GreetingHeadline}>
+          Good Morning,{" "}
+          <span className={styles.GreetingName}>{userFirstName}</span>
+        </p>
         <p className={styles.GreetingDate}>{currentFormattedDate}</p>
       </div>
       <div className={styles.Account}>

@@ -7,13 +7,30 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Button from "@mui/material/Button";
-import { useForm, FormProvider, useFormContext } from "react-hook-form";
+import axios from "axios";
+import { useForm, FormProvider } from "react-hook-form";
 
 const ProfileUpdateForm = () => {
   const methods = useForm();
   const { userData, setUserData } = useContext(ProfileContext);
+
   const handleSaveUserProfile = (formValues) => {
-    console.log("formValues", formValues);
+    axios
+      .post("userProfile", {
+        formValues,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch(function (thrown) {
+        let errorResponseMessage = thrown.response.data;
+        console.log(
+          errorResponseMessage ? errorResponseMessage : thrown.message
+        );
+      });
   };
   const onFormInputChange = (event) => {
     setUserData({ ...userData, [event.target.name]: event.target.value });
