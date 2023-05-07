@@ -9,10 +9,12 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Button from "@mui/material/Button";
 import axios from "axios";
 import { useForm, FormProvider } from "react-hook-form";
+import { useSnackbar } from "notistack";
 
 const ProfileUpdateForm = () => {
   const methods = useForm();
   const { userData, setUserData } = useContext(ProfileContext);
+  const { enqueueSnackbar } = useSnackbar();
 
   const handleSaveUserProfile = (formValues) => {
     axios
@@ -23,13 +25,14 @@ const ProfileUpdateForm = () => {
         },
       })
       .then((response) => {
-        console.log(response);
+        enqueueSnackbar(response.data, {
+          variant: "success",
+        });
       })
       .catch(function (thrown) {
-        let errorResponseMessage = thrown.response.data;
-        console.log(
-          errorResponseMessage ? errorResponseMessage : thrown.message
-        );
+        enqueueSnackbar(thrown.response.data, {
+          variant: "error",
+        });
       });
   };
   const onFormInputChange = (event) => {

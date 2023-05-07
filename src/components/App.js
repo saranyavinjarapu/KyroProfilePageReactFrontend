@@ -1,13 +1,16 @@
 import "./App.css";
 import ProfileMain from "./Profile/ProfileMain";
 import Siderbar from "./Sidebar/Siderbar";
+import { SnackbarProvider, useSnackbar } from "notistack";
 
 function App() {
   return (
-    <div className="App">
-      <Siderbar></Siderbar>
-      <ProfileMain></ProfileMain>
-    </div>
+    <SnackbarProvider>
+      <div className="App">
+        <Siderbar></Siderbar>
+        <ProfileMain></ProfileMain>
+      </div>
+    </SnackbarProvider>
   );
 }
 
