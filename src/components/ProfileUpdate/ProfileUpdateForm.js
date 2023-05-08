@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import styles from "./ProfileUpdate.module.css";
-import { FormItem, ProfileContext } from "./helpers";
+import { FormItem, ProfileContext, ValidationSchema } from "./helpers";
 import PersonIcon from "@mui/icons-material/Person";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
@@ -10,9 +10,12 @@ import Button from "@mui/material/Button";
 import axios from "axios";
 import { useForm, FormProvider } from "react-hook-form";
 import { useSnackbar } from "notistack";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const ProfileUpdateForm = () => {
-  const methods = useForm();
+  const methods = useForm({
+    resolver: yupResolver(ValidationSchema),
+  });
   const { userData, setUserData } = useContext(ProfileContext);
   const { enqueueSnackbar } = useSnackbar();
 
@@ -72,11 +75,13 @@ const ProfileUpdateForm = () => {
             label="Phone No(Work)"
             name="workPhone"
             icon={<LocalPhoneIcon />}
+            dataType="number"
           />
           <FormItem
             label="Phone No(Personal)"
             name="personalPhone"
             icon={<LocalPhoneIcon />}
+            dataType="number"
           />
           <FormItem
             label="Location"

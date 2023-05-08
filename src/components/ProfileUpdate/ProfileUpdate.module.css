@@ -22,3 +22,12 @@
   display: flex;
   justify-content: center;
 }
+
+.ErrorDisplay {
+  color: #bf1650;
+}
+
+.ErrorDisplay::before {
+  display: inline;
+  content: "⚠ ";
+}
