@@ -94,6 +94,9 @@ const ProfileUpdateForm = () => {
           <Button type="submit" variant="contained" size="small" color="error">
             Save Changes
           </Button>
+          <Button type="reset" variant="contained" size="small" color="error">
+            Reset
+          </Button>
         </div>
       </form>
     </FormProvider>
