@@ -20,6 +20,7 @@ const ProfileUpdateForm = () => {
   const { enqueueSnackbar } = useSnackbar();
 
   const handleSaveUserProfile = (formValues) => {
+    console.log(userData);
     axios
       .post("userProfile", {
         formValues,
