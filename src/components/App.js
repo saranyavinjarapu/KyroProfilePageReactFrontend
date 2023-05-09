@@ -1,7 +1,7 @@
 import "./App.css";
 import ProfileMain from "./Profile/ProfileMain";
 import Siderbar from "./Sidebar/Siderbar";
-import { SnackbarProvider, useSnackbar } from "notistack";
+import { SnackbarProvider } from "notistack";
 
 function App() {
   return (
