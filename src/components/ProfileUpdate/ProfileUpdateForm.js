@@ -20,10 +20,9 @@ const ProfileUpdateForm = () => {
   const { enqueueSnackbar } = useSnackbar();
 
   const handleSaveUserProfile = (formValues) => {
-    console.log(userData);
     axios
       .post(
-        "https://kyroprofilesaveservice.netlify.app/.netlify/functions/api/userProfile",
+        "https://kyroprofilepagesaveservicebackend.netlify.app/.netlify/functions/api/userProfile",
         {
           formValues,
           headers: {
