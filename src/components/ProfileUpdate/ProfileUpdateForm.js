@@ -21,21 +21,20 @@ const ProfileUpdateForm = () => {
 
   const handleSaveUserProfile = (formValues) => {
     axios
-      .post(
-        "https://kyroprofilepagesaveservicebackend.netlify.app/.netlify/functions/api/userProfile",
-        {
-          formValues,
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      )
+      .post("userProfile", {
+        formValues,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
       .then((response) => {
+        console.log("respoinse", response);
         enqueueSnackbar(response.data, {
           variant: "success",
         });
       })
       .catch(function (thrown) {
+        console.log("error", thrown);
         let errorMessage = thrown.response.data
           ? thrown.response.data
           : "Error processing the request";
